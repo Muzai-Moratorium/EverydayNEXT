@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1rem;
+    nav {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            li {
+                a {
+                    display: inline-block;
+                    font-size: 2rem;
+                    text-decoration: none;
+                    transition: 0.2s ease-in-out;
+                    &:hover {
+                        transform: scale(1.5) rotateZ(30deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes LinkMove {
+    0% {
+        transform: rotateY(30deg);
+    }
+    100% {
+        transform: rotateX(60deg);
+    }
+}
