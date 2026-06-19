@@ -1,0 +1,305 @@
+.container {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+/* 1. Header Grid Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.headerRight {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.edition, .statusLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.statusLabel {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* 2. Hero Specimen Area */
+.hero {
+  padding: 80px 40px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.85;
+}
+
+.mainTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(60px, 12vw, 150px);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.outlineText {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--text-main);
+}
+
+.heroSub {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: flex-end;
+}
+
+.heroDesc p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  max-width: 600px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.heroMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: right;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* 3. Projects Grid header */
+.gridHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background-color: var(--border-color);
+  color: var(--bg-color);
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* 4. Swiss Grid System */
+.main {
+  flex-grow: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  background-color: var(--border-color);
+  gap: 1px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card {
+  background-color: var(--bg-color);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  transition: background-color 0.2s ease;
+}
+
+.card:hover {
+  background-color: #ededeb;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.dayBadge {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background-color: var(--text-main);
+  color: var(--bg-color);
+  padding: 4px 10px;
+}
+
+.tagLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.cardBody {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.cardDesc {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+
+.tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: var(--text-muted);
+  padding: 3px 8px;
+}
+
+.linkButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--text-main);
+  color: var(--bg-color);
+  border: 1px solid var(--text-main);
+  padding: 16px 24px;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.linkButton:hover {
+  background-color: transparent;
+  color: var(--text-main);
+}
+
+.arrow {
+  width: 18px;
+  height: 18px;
+}
+
+/* Placeholder card style */
+.cardPlaceholder {
+  background-color: var(--bg-color);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+}
+
+.dayBadgePlaceholder {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  border: 1px dashed var(--text-muted);
+  padding: 4px 10px;
+  width: fit-content;
+}
+
+.placeholderContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.placeholderTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-muted);
+}
+
+.placeholderDesc {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* 5. Footer Styling */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  border-top: 1px solid var(--border-color);
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .heroSub {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .heroMeta {
+    text-align: left;
+  }
+  .headerRight {
+    display: none;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
