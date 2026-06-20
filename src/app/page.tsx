@@ -26,6 +26,14 @@ const dayProjects: DayProject[] = [
     tags: ["Data Rendering", "Layouts", "TypeScript"],
     href: "/day-2",
   },
+  {
+    day: 3,
+    title: "다크모드 상태 관리 및 컴포넌트 분리",
+    description:
+      "useState와 useEffect를 이용한 다크모드 구현, 버튼 컴포넌트 분리 및 fixed 스타일링 실습",
+    tags: ["useState", "useEffect", "CSS Variables", "Global SCSS"],
+    href: "/day-3",
+  },
 ];
 
 export default function DashboardPage() {
@@ -110,7 +118,7 @@ export default function DashboardPage() {
 
           {/* Placeholder Grid Cell */}
           <div className={styles.cardPlaceholder}>
-            <span className={styles.dayBadgePlaceholder}>DAY_03</span>
+            <span className={styles.dayBadgePlaceholder}>DAY_04</span>
             <div className={styles.placeholderContent}>
               <h2 className={styles.placeholderTitle}>AWAITING TOMORROW</h2>
               <p className={styles.placeholderDesc}>

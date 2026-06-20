@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "Pretendard";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2") format("woff2");
+    // font-weight: 1000;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pretendard";
+}
+body {
+    transition: all 0.3s ease-in-out;
+}
+
+.Dark {
+    background: linear-gradient(rgba(0, 0, 0, 0.87), whitesmoke);
+    color: whitesmoke;
+    ::selection {
+        background: rgb(76, 40, 240);
+    }
+}
+
+::selection {
+    background: rgb(147, 126, 240);
+}
