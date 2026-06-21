@@ -6,6 +6,7 @@
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--bg-color);
+  overflow-x: hidden;
 }
 
 /* 1. Header Grid Styling */
@@ -124,33 +125,124 @@
   flex-grow: 1;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  background-color: var(--border-color);
-  gap: 1px;
-  border-bottom: 1px solid var(--border-color);
+.sliderViewport {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  margin: 60px auto;
+  box-sizing: border-box;
+  overflow: visible;
+  --slide-gap: 310px;
+  touch-action: pan-y;
+}
+
+.sliderTrack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.sliderCard {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 420px;
+  margin-left: -210px;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rangeSliderContainer {
+  width: 100%;
+  max-width: 420px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .sliderViewport {
+    --slide-gap: 190px;
+    height: 380px;
+    margin: 40px auto;
+  }
+  .sliderCard {
+    width: 290px;
+    margin-left: -145px;
+  }
+  .rangeSliderContainer {
+    max-width: 290px;
+    margin-top: 30px;
+  }
+}
+
+.rangeInput {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--text-main);
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease;
+}
+
+.rangeInput::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+.pageIndicator {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: var(--bg-color);
 }
 
 .card {
-  background-color: var(--bg-color);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 380px;
-  transition: background-color 0.2s ease;
+  height: 100%;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-  background-color: #ededeb;
+.card.activeCard {
+  background: var(--bg-color);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card.activeCard:hover {
+  background: #ededeb;
 }
 
 .cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .dayBadge {
@@ -235,12 +327,24 @@
 
 /* Placeholder card style */
 .cardPlaceholder {
-  background-color: var(--bg-color);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 380px;
+  height: 100%;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.cardPlaceholder.activeCard {
+  background: var(--bg-color);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px dashed var(--text-muted);
 }
 
 .dayBadgePlaceholder {
