@@ -1,14 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { dayProjects } from "./dayConfig";
 import styles from "./page.module.css";
 
 export default function DashboardPage() {
+  const router = useRouter();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [slideStartVal, setSlideStartVal] = useState<number>(0);
+
+  // PC용 마우스 드래그 상태
+  const [isMouseDown, setIsMouseDown] = useState(false);
+  const [startX, setStartX] = useState(0);
+
+  // 드래그 중 클릭 방지 플래그
+  const [isDragging, setIsDragging] = useState(false);
 
   const nextDayNum = dayProjects.length + 1;
 
@@ -26,18 +35,24 @@ export default function DashboardPage() {
 
   const totalSlides = allSlides.length;
 
+  // 모바일 터치 제스처 핸들러
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.touches[0].clientX);
     setSlideStartVal(currentIndex);
+    setIsDragging(false);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (touchStart === null) return;
     const clientX = e.touches[0].clientX;
     const deltaX = clientX - touchStart;
+
+    if (Math.abs(deltaX) > 8) {
+      setIsDragging(true);
+    }
+
     const viewportWidth = typeof window !== "undefined" ? window.innerWidth : 360;
     
-    // 모바일에서는 화면이 좁으므로 드래그 거리를 반영하여 감도 보정
     const slideDelta = -(deltaX / (viewportWidth * 0.5));
     const newIndex = Math.min(Math.max(0, slideStartVal + slideDelta), totalSlides - 1);
     setCurrentIndex(newIndex);
@@ -46,7 +61,55 @@ export default function DashboardPage() {
   const handleTouchEnd = () => {
     setTouchStart(null);
     setCurrentIndex((prev) => Math.round(prev));
+    setTimeout(() => setIsDragging(false), 50);
   };
+
+  // PC 마우스 드래그 핸들러
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsMouseDown(true);
+    setStartX(e.clientX);
+    setSlideStartVal(currentIndex);
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isMouseDown) return;
+    const clientX = e.clientX;
+    const deltaX = clientX - startX;
+
+    if (Math.abs(deltaX) > 8) {
+      setIsDragging(true);
+    }
+
+    const viewportWidth = typeof window !== "undefined" ? window.innerWidth : 360;
+
+    const slideDelta = -(deltaX / (viewportWidth * 0.5));
+    const newIndex = Math.min(Math.max(0, slideStartVal + slideDelta), totalSlides - 1);
+    setCurrentIndex(newIndex);
+  };
+
+  const handleMouseUpOrLeave = () => {
+    if (!isMouseDown) return;
+    setIsMouseDown(false);
+    setCurrentIndex((prev) => Math.round(prev));
+    setTimeout(() => setIsDragging(false), 50);
+  };
+
+  // 키보드 방향키 전역 제어
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        setCurrentIndex((prev) => Math.max(0, Math.round(prev) - 1));
+      } else if (e.key === "ArrowRight") {
+        setCurrentIndex((prev) => Math.min(totalSlides - 1, Math.round(prev) + 1));
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [totalSlides]);
 
   return (
     <div className={styles.container}>
@@ -93,6 +156,10 @@ export default function DashboardPage() {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUpOrLeave}
+          onMouseLeave={handleMouseUpOrLeave}
         >
           <div className={styles.sliderTrack}>
             {allSlides.map((project, index) => {
@@ -136,7 +203,11 @@ export default function DashboardPage() {
               if (isPlaceholder) {
                 return (
                   <div key={`placeholder-${project.day}`} className={styles.sliderCard} style={cardStyle}>
-                    <div className={`${styles.cardPlaceholder} ${isCurrent ? styles.activeCard : ""}`}>
+                    <div
+                      className={`${styles.cardPlaceholder} ${isCurrent ? styles.activeCard : ""}`}
+                      tabIndex={0}
+                      onFocus={() => setCurrentIndex(index)}
+                    >
                       <span className={styles.dayBadgePlaceholder}>DAY_{formattedDay}</span>
                       <div className={styles.placeholderContent}>
                         <h2 className={styles.placeholderTitle}>{project.title}</h2>
@@ -149,7 +220,16 @@ export default function DashboardPage() {
 
               return (
                 <div key={project.day} className={styles.sliderCard} style={cardStyle}>
-                  <div className={`${styles.card} ${isCurrent ? styles.activeCard : ""}`}>
+                  <div
+                    className={`${styles.card} ${isCurrent ? styles.activeCard : ""}`}
+                    tabIndex={0}
+                    onFocus={() => setCurrentIndex(index)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        router.push(project.href);
+                      }
+                    }}
+                  >
                     <div className={styles.cardHeader}>
                       <span className={styles.dayBadge}>DAY_{formattedDay}</span>
                       <span className={styles.tagLabel}>[ COMPLETED ]</span>
@@ -165,7 +245,15 @@ export default function DashboardPage() {
                         ))}
                       </div>
                     </div>
-                    <Link href={project.href} className={styles.linkButton}>
+                    <Link
+                      href={project.href}
+                      className={styles.linkButton}
+                      onClick={(e) => {
+                        if (isDragging) {
+                          e.preventDefault();
+                        }
+                      }}
+                    >
                       ENTER STUDYROOM
                       <svg
                         className={styles.arrow}

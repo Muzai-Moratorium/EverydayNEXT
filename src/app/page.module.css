@@ -134,6 +134,13 @@
   overflow: visible;
   --slide-gap: 310px;
   touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+}
+
+.sliderViewport:active {
+  cursor: grabbing;
 }
 
 .sliderTrack {
@@ -232,6 +239,11 @@
   -webkit-backdrop-filter: none;
   border: 1px solid var(--border-color);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 4px;
 }
 
 .card.activeCard:hover {
@@ -345,6 +357,11 @@
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border: 1px dashed var(--text-muted);
+}
+
+.cardPlaceholder:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 4px;
 }
 
 .dayBadgePlaceholder {
