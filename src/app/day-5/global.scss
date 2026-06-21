@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "Pretendard";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2") format("woff2");
+    // font-weight: 1000;
+    font-display: swap;
+}
+
+:root {
+    --card-bg: rgba(255, 255, 255, 0.534);
+    --card-border: 1px groove rgba(5, 5, 5, 0.24);
+    --card-shadow: inset 0 1px 10px rgba(109, 109, 109, 0.151);
+}
+
+html.dark {
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: 1px solid rgba(255, 255, 255, 0.05);
+    --card-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+code {
+    background: rgba(0, 0, 0, 0.06);
+    color: #d97706;
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+html.dark code {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8ab36;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pretendard";
+}
+html,
+body {
+    min-height: 100vh;
+}
+body {
+    transition:
+        background-color 0.3s ease-in-out,
+        color 0.3s ease-in-out;
+    background-color: white;
+    color: black;
+}
+
+html.dark body {
+    background-color: #252d3f;
+    color: whitesmoke;
+}
+
+::selection {
+    background: #f8ab36e8;
+}

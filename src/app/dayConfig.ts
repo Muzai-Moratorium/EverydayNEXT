@@ -39,4 +39,12 @@ export const dayProjects: DayProject[] = [
     tags: ["Custom Hook", "SCSS Modules"],
     href: "/day-4",
   },
+  {
+    day: 5,
+    title: "Intersection Observer 스크롤 애니메이션",
+    description:
+      "react-intersection-observer를 활용해 뷰포트 진입을 감지하고, CSS 변수와 트랜지션을 이용해 지연 및 속도 조절이 가능한 스크롤 애니메이션 구현",
+    tags: ["Intersection Observer", "Scroll Animation", "CSS Variables"],
+    href: "/day-5",
+  },
 ];

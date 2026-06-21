@@ -151,6 +151,7 @@ export default function DashboardPage() {
           </span>
         </div>
 
+        {/* biome-ignore lint/a11y: slider interaction is handled by pointer events */}
         <div
           className={styles.sliderViewport}
           onTouchStart={handleTouchStart}
@@ -203,6 +204,7 @@ export default function DashboardPage() {
               if (isPlaceholder) {
                 return (
                   <div key={`placeholder-${project.day}`} className={styles.sliderCard} style={cardStyle} aria-hidden={!isCurrent}>
+                    {/* biome-ignore lint/a11y: focus handler is used to update slider index for accessibility */}
                     <div
                       className={`${styles.cardPlaceholder} ${isCurrent ? styles.activeCard : ""}`}
                       tabIndex={0}
@@ -220,6 +222,7 @@ export default function DashboardPage() {
 
               return (
                 <div key={project.day} className={styles.sliderCard} style={cardStyle} aria-hidden={!isCurrent}>
+                  {/* biome-ignore lint/a11y: interactive card handles focus and navigation via Enter key */}
                   <div
                     className={`${styles.card} ${isCurrent ? styles.activeCard : ""}`}
                     tabIndex={0}
