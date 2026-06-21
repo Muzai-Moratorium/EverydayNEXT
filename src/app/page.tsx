@@ -202,7 +202,7 @@ export default function DashboardPage() {
 
               if (isPlaceholder) {
                 return (
-                  <div key={`placeholder-${project.day}`} className={styles.sliderCard} style={cardStyle}>
+                  <div key={`placeholder-${project.day}`} className={styles.sliderCard} style={cardStyle} aria-hidden={!isCurrent}>
                     <div
                       className={`${styles.cardPlaceholder} ${isCurrent ? styles.activeCard : ""}`}
                       tabIndex={0}
@@ -219,7 +219,7 @@ export default function DashboardPage() {
               }
 
               return (
-                <div key={project.day} className={styles.sliderCard} style={cardStyle}>
+                <div key={project.day} className={styles.sliderCard} style={cardStyle} aria-hidden={!isCurrent}>
                   <div
                     className={`${styles.card} ${isCurrent ? styles.activeCard : ""}`}
                     tabIndex={0}
@@ -287,6 +287,7 @@ export default function DashboardPage() {
             value={currentIndex}
             onChange={(e) => setCurrentIndex(parseFloat(e.target.value))}
             className={styles.rangeInput}
+            aria-label="프로젝트 선택 슬라이더"
           />
         </div>
       </main>

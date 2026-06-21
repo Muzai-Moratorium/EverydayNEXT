@@ -3,9 +3,9 @@
 :root {
   --bg-color: #f4f4f0;
   --text-main: #000000;
-  --text-muted: #666666;
+  --text-muted: #484848;
   --border-color: #000000;
-  --accent-color: #ff4000;
+  --accent-color: #d83100;
 }
 
 ::selection {
