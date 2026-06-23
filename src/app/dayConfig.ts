@@ -52,7 +52,13 @@ export const dayProjects: DayProject[] = [
     title: "컴포넌트 아키텍처 & WebGL 마우스 반응형 배경",
     description:
       "컴포넌트 관심사 분리(SoC) 및 폴더 구조 정립, Next.js Static Import 최적화, OGL 라이브러리를 활용한 EvilEye WebGL 마우스 반응형 배경 구현 및 디버깅, 하드코딩 방지를 위한 설정 및 타입 정의 파일 분리",
-    tags: ["Component Architecture", "WebGL/OGL", "Static Import", "CSS Layout", "TypeScript Types"],
+    tags: [
+      "Component Architecture",
+      "WebGL/OGL",
+      "Static Import",
+      "CSS Layout",
+      "TypeScript Types",
+    ],
     href: "/day-6",
-  }
+  },
 ];

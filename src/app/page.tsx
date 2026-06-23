@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { dayProjects } from "./dayConfig";
 import styles from "./page.module.css";
 
@@ -51,10 +51,14 @@ export default function DashboardPage() {
       setIsDragging(true);
     }
 
-    const viewportWidth = typeof window !== "undefined" ? window.innerWidth : 360;
-    
+    const viewportWidth =
+      typeof window !== "undefined" ? window.innerWidth : 360;
+
     const slideDelta = -(deltaX / (viewportWidth * 0.5));
-    const newIndex = Math.min(Math.max(0, slideStartVal + slideDelta), totalSlides - 1);
+    const newIndex = Math.min(
+      Math.max(0, slideStartVal + slideDelta),
+      totalSlides - 1,
+    );
     setCurrentIndex(newIndex);
   };
 
@@ -81,10 +85,14 @@ export default function DashboardPage() {
       setIsDragging(true);
     }
 
-    const viewportWidth = typeof window !== "undefined" ? window.innerWidth : 360;
+    const viewportWidth =
+      typeof window !== "undefined" ? window.innerWidth : 360;
 
     const slideDelta = -(deltaX / (viewportWidth * 0.5));
-    const newIndex = Math.min(Math.max(0, slideStartVal + slideDelta), totalSlides - 1);
+    const newIndex = Math.min(
+      Math.max(0, slideStartVal + slideDelta),
+      totalSlides - 1,
+    );
     setCurrentIndex(newIndex);
   };
 
@@ -101,7 +109,9 @@ export default function DashboardPage() {
       if (e.key === "ArrowLeft") {
         setCurrentIndex((prev) => Math.max(0, Math.round(prev) - 1));
       } else if (e.key === "ArrowRight") {
-        setCurrentIndex((prev) => Math.min(totalSlides - 1, Math.round(prev) + 1));
+        setCurrentIndex((prev) =>
+          Math.min(totalSlides - 1, Math.round(prev) + 1),
+        );
       }
     };
 
@@ -128,9 +138,7 @@ export default function DashboardPage() {
       <section className={styles.hero}>
         <div className={styles.heroText}>
           <h1 className={styles.mainTitle}>EVERYDAY</h1>
-          <h1 className={`${styles.mainTitle} ${styles.outlineText}`}>
-            NEXT
-          </h1>
+          <h1 className={`${styles.mainTitle} ${styles.outlineText}`}>NEXT</h1>
         </div>
         <div className={styles.heroSub}>
           <div className={styles.heroDesc}>
@@ -164,8 +172,10 @@ export default function DashboardPage() {
         >
           <div className={styles.sliderTrack}>
             {allSlides.map((project, index) => {
-              const isPlaceholder = "isPlaceholder" in project && project.isPlaceholder;
-              const formattedDay = project.day < 10 ? `0${project.day}` : project.day;
+              const isPlaceholder =
+                "isPlaceholder" in project && project.isPlaceholder;
+              const formattedDay =
+                project.day < 10 ? `0${project.day}` : project.day;
 
               const diff = index - currentIndex;
               const absDiff = Math.abs(diff);
@@ -203,17 +213,28 @@ export default function DashboardPage() {
 
               if (isPlaceholder) {
                 return (
-                  <div key={`placeholder-${project.day}`} className={styles.sliderCard} style={cardStyle} aria-hidden={!isCurrent}>
+                  <div
+                    key={`placeholder-${project.day}`}
+                    className={styles.sliderCard}
+                    style={cardStyle}
+                    aria-hidden={!isCurrent}
+                  >
                     {/* biome-ignore lint/a11y: focus handler is used to update slider index for accessibility */}
                     <div
                       className={`${styles.cardPlaceholder} ${isCurrent ? styles.activeCard : ""}`}
                       tabIndex={0}
                       onFocus={() => setCurrentIndex(index)}
                     >
-                      <span className={styles.dayBadgePlaceholder}>DAY_{formattedDay}</span>
+                      <span className={styles.dayBadgePlaceholder}>
+                        DAY_{formattedDay}
+                      </span>
                       <div className={styles.placeholderContent}>
-                        <h2 className={styles.placeholderTitle}>{project.title}</h2>
-                        <p className={styles.placeholderDesc}>{project.description}</p>
+                        <h2 className={styles.placeholderTitle}>
+                          {project.title}
+                        </h2>
+                        <p className={styles.placeholderDesc}>
+                          {project.description}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -221,7 +242,12 @@ export default function DashboardPage() {
               }
 
               return (
-                <div key={project.day} className={styles.sliderCard} style={cardStyle} aria-hidden={!isCurrent}>
+                <div
+                  key={project.day}
+                  className={styles.sliderCard}
+                  style={cardStyle}
+                  aria-hidden={!isCurrent}
+                >
                   {/* biome-ignore lint/a11y: interactive card handles focus and navigation via Enter key */}
                   <div
                     className={`${styles.card} ${isCurrent ? styles.activeCard : ""}`}
@@ -234,7 +260,9 @@ export default function DashboardPage() {
                     }}
                   >
                     <div className={styles.cardHeader}>
-                      <span className={styles.dayBadge}>DAY_{formattedDay}</span>
+                      <span className={styles.dayBadge}>
+                        DAY_{formattedDay}
+                      </span>
                       <span className={styles.tagLabel}>[ COMPLETED ]</span>
                     </div>
                     <div className={styles.cardBody}>

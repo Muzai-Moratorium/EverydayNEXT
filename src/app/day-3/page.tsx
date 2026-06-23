@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "./page.module.scss";
 import DarkBtn from "./components/darkBtn/darkBtn";
+import styles from "./page.module.scss";
 
 const Home = () => {
   const [isDark, setIsDark] = useState<boolean>(false);

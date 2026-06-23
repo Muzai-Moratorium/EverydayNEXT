@@ -56,7 +56,8 @@ const Home = () => {
           <div className={styles.card}>
             <h3>두 번째 카드</h3>
             <p>
-              <code>delay200</code> 클래스가 부여되어 첫 번째 카드보다 0.2초 늦게 순차적으로 나타납니다.
+              <code>delay200</code> 클래스가 부여되어 첫 번째 카드보다 0.2초
+              늦게 순차적으로 나타납니다.
             </p>
           </div>
         </ScrollAnimate>
@@ -69,7 +70,8 @@ const Home = () => {
           <div className={styles.card}>
             <h3>세 번째 카드</h3>
             <p>
-              <code>delay400</code> 및 <code>slow</code>가 부여되어 0.4초 늦게 시작하며, 2초 동안 느릿하게 나타납니다.
+              <code>delay400</code> 및 <code>slow</code>가 부여되어 0.4초 늦게
+              시작하며, 2초 동안 느릿하게 나타납니다.
             </p>
           </div>
         </ScrollAnimate>

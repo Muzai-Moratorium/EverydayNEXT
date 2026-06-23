@@ -30,5 +30,11 @@
     ".next/dev/types/**/*.ts",
     "src/**/*.mts"
   ],
-  "exclude": ["node_modules", "day-1", "day-2", "_backup_day-1", "_backup_day-2"]
+  "exclude": [
+    "node_modules",
+    "day-1",
+    "day-2",
+    "_backup_day-1",
+    "_backup_day-2"
+  ]
 }

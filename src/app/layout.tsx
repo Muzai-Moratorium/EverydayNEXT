@@ -3,7 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Everyday Next - Daily Code Specimen",
-  description: "Everyday Next is a digital specimen archiving 30 minutes of daily coding exercises built with Next.js and TypeScript.",
+  description:
+    "Everyday Next is a digital specimen archiving 30 minutes of daily coding exercises built with Next.js and TypeScript.",
 };
 
 export default function RootLayout({
@@ -13,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" suppressHydrationWarning>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

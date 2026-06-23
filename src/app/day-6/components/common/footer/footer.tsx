@@ -13,11 +13,11 @@ const Footer = () => {
         ))}
       </div>
       <small>
-        © {new Date().getFullYear()} {footerConfig.companyName}. {footerConfig.copyright}
+        © {new Date().getFullYear()} {footerConfig.companyName}.{" "}
+        {footerConfig.copyright}
       </small>
     </footer>
   );
 };
 
 export default Footer;
-

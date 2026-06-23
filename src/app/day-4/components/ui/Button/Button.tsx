@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import styles from "./Button.module.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -7,10 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = ({ children, className, ...props }: ButtonProps) => {
   return (
-    <button
-      className={`${styles.mainBtn} ${className || ""}`}
-      {...props}
-    >
+    <button className={`${styles.mainBtn} ${className || ""}`} {...props}>
       {children}
     </button>
   );

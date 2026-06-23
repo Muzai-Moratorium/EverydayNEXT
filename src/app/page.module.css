@@ -24,7 +24,7 @@
 }
 
 .logo {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 20px;
   font-weight: 800;
   letter-spacing: -0.05em;
@@ -37,8 +37,9 @@
   align-items: center;
 }
 
-.edition, .statusLabel {
-  font-family: 'Space Mono', monospace;
+.edition,
+.statusLabel {
+  font-family: "Space Mono", monospace;
   font-size: 11px;
   letter-spacing: 0.05em;
   color: var(--text-muted);
@@ -65,7 +66,7 @@
 }
 
 .mainTitle {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(60px, 12vw, 150px);
   font-weight: 900;
   letter-spacing: -0.05em;
@@ -87,7 +88,7 @@
 }
 
 .heroDesc p {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 18px;
   line-height: 1.5;
   letter-spacing: -0.02em;
@@ -101,7 +102,7 @@
   flex-direction: column;
   gap: 8px;
   text-align: right;
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 11px;
   color: var(--text-muted);
   letter-spacing: 0.05em;
@@ -114,7 +115,7 @@
   padding: 16px 40px;
   background-color: var(--border-color);
   color: var(--bg-color);
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -156,9 +157,10 @@
   width: 420px;
   margin-left: -210px;
   height: 100%;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .rangeSliderContainer {
@@ -213,7 +215,7 @@
 }
 
 .pageIndicator {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 12px;
   color: var(--bg-color);
 }
@@ -230,7 +232,10 @@
   justify-content: space-between;
   height: 100%;
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.05);
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card.activeCard {
@@ -258,7 +263,7 @@
 }
 
 .dayBadge {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -268,7 +273,7 @@
 }
 
 .tagLabel {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 11px;
   color: var(--accent-color);
   font-weight: 700;
@@ -282,7 +287,7 @@
 }
 
 .cardTitle {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -304,7 +309,7 @@
 }
 
 .tag {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 11px;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -320,7 +325,7 @@
   color: var(--bg-color);
   border: 1px solid var(--text-main);
   padding: 16px 24px;
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
@@ -349,7 +354,9 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .cardPlaceholder.activeCard {
@@ -365,7 +372,7 @@
 }
 
 .dayBadgePlaceholder {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 12px;
   font-weight: 700;
   color: var(--text-muted);
@@ -383,7 +390,7 @@
 }
 
 .placeholderTitle {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -402,7 +409,7 @@
   justify-content: space-between;
   padding: 40px;
   border-top: 1px solid var(--border-color);
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 11px;
   color: var(--text-muted);
   letter-spacing: 0.05em;
