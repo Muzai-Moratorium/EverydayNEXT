@@ -1,0 +1,17 @@
+.mainHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid;
+    width: 100%;
+    .HeaderTop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        padding: 0 20px;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: 1;
+  .todays {
+    list-style: none;
+  }
+  ul {
+    padding-left: 20px;
+    list-style: armenian;
+    li {
+      display: list-item;
+      margin: 8px 0;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+:root {
+    --text-color: #333333;
+    --main-point-color: #f053a9;
+    --main-bg-color: #faf9f6;
+    --dark-bg-color: #141214;
+}
+
+html.dark {
+    --text-color: var(--main-bg-color);
+}
+
+html.dark body {
+    background-color: var(--dark-bg-color);
+    color: var(--main-bg-color);
+}
+
+.layoutWrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+::selection {
+    background: #f053a9e8;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}

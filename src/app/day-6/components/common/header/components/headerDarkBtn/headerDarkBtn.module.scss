@@ -1,0 +1,23 @@
+.MainButton {
+    border: none;
+    font-size: 2rem;
+    color: black;
+    // text-shadow: 1px 1px 1px rgb(10, 10, 10);
+    background: rgba(245, 245, 245, 0.486);
+    filter: blur(0.5px);
+    backdrop-filter: blur(5px);
+    border-radius: 100%;
+    padding: 5px;
+    transition: 0.1s ease-in-out;
+    box-shadow: inset 0 0 5px 3px rgba(0, 0, 0, 0.363);
+    display: flex;
+    transition: 0.2s ease-in-out;
+    // text-align: center;
+    &:hover {
+        background-color: #f053a9af;
+        filter: blur(0.25px);
+        backdrop-filter: blur(5px);
+        // transform: scale(1.1);
+        cursor: pointer;
+    }
+}
