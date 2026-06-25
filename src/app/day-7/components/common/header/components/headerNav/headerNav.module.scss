@@ -1,0 +1,54 @@
+.headerNav {
+  ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      a {
+        font-family: "Space Mono", monospace;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--text-main);
+        text-decoration: none;
+        position: relative;
+        transition: color 0.2s ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: -4px;
+          left: 0;
+          background-color: var(--accent-color);
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+
+        &:hover {
+          color: var(--accent-color);
+
+          &::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .headerNav {
+    width: 100%;
+    ul {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+}

@@ -61,4 +61,12 @@ export const dayProjects: DayProject[] = [
     ],
     href: "/day-6",
   },
+  {
+    day: 7,
+    title: "SoC 패턴 및 React Portal 모달 구현",
+    description:
+      "컴포넌트 관심사 분리(SoC) 구조 하에 React Portal을 활용한 모달 컴포넌트를 설계하고, 웹 접근성(a11y) 표준을 만족하는 키보드 핸들러 및 포커스 닫기 기능 구현",
+    tags: ["Separation of Concerns", "React Portal", "Web Accessibility", "Modal Component"],
+    href: "/day-7",
+  },
 ];
