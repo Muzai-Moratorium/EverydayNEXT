@@ -66,7 +66,24 @@ export const dayProjects: DayProject[] = [
     title: "SoC 패턴 및 React Portal 모달 구현",
     description:
       "컴포넌트 관심사 분리(SoC) 구조 하에 React Portal을 활용한 모달 컴포넌트를 설계하고, 웹 접근성(a11y) 표준을 만족하는 키보드 핸들러 및 포커스 닫기 기능 구현",
-    tags: ["Separation of Concerns", "React Portal", "Web Accessibility", "Modal Component"],
+    tags: [
+      "Separation of Concerns",
+      "React Portal",
+      "Web Accessibility",
+      "Modal Component",
+    ],
     href: "/day-7",
+  },
+  {
+    day: 8,
+    title: "커스텀 훅을 활용한 SoC 패턴 연습",
+    description:
+      "useState를 활용한 이미지 슬라이더 로직을 usePhoto 커스텀 훅으로 분리하고, 다크모드 훅과 연동하여 관심사 분리(SoC)를 구현한 애플 스타일의 미니멀 갤러리 페이지",
+    tags: [
+      "Custom Hooks",
+      "Separation of Concerns",
+      "State Management",
+    ],
+    href: "/day-8",
   },
 ];
