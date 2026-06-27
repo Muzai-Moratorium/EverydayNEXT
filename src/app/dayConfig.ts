@@ -86,4 +86,12 @@ export const dayProjects: DayProject[] = [
     ],
     href: "/day-8",
   },
+  {
+    day: 9,
+    title: "useKeyPress 커스텀 훅을 활용한 이벤트 핸들링",
+    description:
+      "특정 키 입력을 감지하여 콜백 함수를 실행하는 useKeyPress 커스텀 훅을 설계하고, 엔터(Enter) 키 입력 시 다크모드가 토글되는 이벤트 핸들링 구조 구현",
+    tags: ["Custom Hooks", "Event Handling", "Accessibility"],
+    href: "/day-9",
+  }
 ];
