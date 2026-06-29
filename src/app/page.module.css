@@ -298,14 +298,19 @@
   color: var(--text-muted);
   font-size: 15px;
   line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 12px;
-  margin-bottom: 32px;
+  margin-top: auto;
+  margin-bottom: 16px;
 }
 
 .tag {
@@ -315,6 +320,7 @@
   border: 1px solid rgba(0, 0, 0, 0.15);
   color: var(--text-muted);
   padding: 3px 8px;
+  white-space: nowrap;
 }
 
 .linkButton {
@@ -401,6 +407,11 @@
   color: var(--text-muted);
   font-size: 14px;
   line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 5. Footer Styling */

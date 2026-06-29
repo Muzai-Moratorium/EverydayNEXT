@@ -81,7 +81,7 @@ export const dayProjects: DayProject[] = [
       "useState를 활용한 이미지 슬라이더 로직을 usePhoto 커스텀 훅으로 분리하고, 다크모드 훅과 연동하여 관심사 분리(SoC)를 구현한 애플 스타일의 미니멀 갤러리 페이지",
     tags: [
       "Custom Hooks",
-      "Separation of Concerns",
+      "SoC",
       "State Management",
     ],
     href: "/day-8",
@@ -99,7 +99,7 @@ export const dayProjects: DayProject[] = [
     title: "관심사 분리(SoC)를 적용한 공통 레이아웃 템플릿 및 다크모드 구현",
     description:
       "공통 Header, Footer, Nav 컴포넌트의 관심사를 분리하고, 다크모드 커스텀 훅(useDarkMode)과 전역 CSS 변수를 연동하여 부드러운 테마 전환 기능을 제공하는 기본 템플릿 페이지",
-    tags: ["Custom Hooks", "Separation of Concerns", "CSS Variables"],
+    tags: ["Custom Hooks", "SoC", "CSS Variables"],
     href: "/day-10",
   }
 ];
