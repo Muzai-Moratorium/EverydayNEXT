@@ -1,0 +1,17 @@
+.mainNav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.mainNav a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  transition: color 0.2s ease-in-out;
+}
+
+.mainNav a:hover {
+  color: var(--accent-color, #d83100);
+}

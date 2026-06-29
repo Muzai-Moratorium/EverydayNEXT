@@ -93,5 +93,13 @@ export const dayProjects: DayProject[] = [
       "특정 키 입력을 감지하여 콜백 함수를 실행하는 useKeyPress 커스텀 훅을 설계하고, 엔터(Enter) 키 입력 시 다크모드가 토글되는 이벤트 핸들링 구조 구현",
     tags: ["Custom Hooks", "Event Handling", "Accessibility"],
     href: "/day-9",
+  },
+  {
+    day: 10,
+    title: "관심사 분리(SoC)를 적용한 공통 레이아웃 템플릿 및 다크모드 구현",
+    description:
+      "공통 Header, Footer, Nav 컴포넌트의 관심사를 분리하고, 다크모드 커스텀 훅(useDarkMode)과 전역 CSS 변수를 연동하여 부드러운 테마 전환 기능을 제공하는 기본 템플릿 페이지",
+    tags: ["Custom Hooks", "Separation of Concerns", "CSS Variables"],
+    href: "/day-10",
   }
 ];

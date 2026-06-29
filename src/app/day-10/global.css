@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: blanchedalmond;
+  color: black;
+}
+
+body {
+  transition: 0.3s ease-in-out;
+}
+
+.Dark {
+  --bg-color: #000000;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  --border-color: #ffffff;
+}

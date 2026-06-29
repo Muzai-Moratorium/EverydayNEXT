@@ -1,0 +1,14 @@
+.mainFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--text-muted);
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.copyright {
+  font-size: 0.875rem;
+}
